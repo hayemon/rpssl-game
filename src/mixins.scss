@@ -1,0 +1,48 @@
+@import './variables.scss';
+
+@mixin spinner-before {
+  position: absolute;
+  content: '';
+  left: -25%;
+  top: -25%;
+  width: 150%;
+  height: 150%;
+  background: $spin-conic-gradient;
+  animation: spin 2s infinite linear;
+}
+
+@mixin spinner-after {
+  position: absolute;
+  content: '';
+  border-radius: $border-radius - 4px;
+  background: $primary-color;
+  inset: 4px;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@mixin rotate-animation {
+  @keyframes rotate {
+    0% {
+      transform: perspective(600px) rotateY(0deg);
+    }
+    100% {
+      transform: perspective(600px) rotateY(360deg);
+    }
+  }
+}
+
+@mixin text-glow($color) {
+  text-shadow: 0 0 10px $color, 0 0 20px $color, 0 0 40px $color,
+    0 0 80px $color, 0 0 160px $color;
+}
+
+@mixin img-in-box {
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}

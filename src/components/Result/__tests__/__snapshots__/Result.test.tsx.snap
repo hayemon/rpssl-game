@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Result renders 1`] = `
+<DocumentFragment>
+  <div>
+    <div>
+      <h3
+        class="undefined undefined"
+      >
+        Player
+      </h3>
+      <h3
+        class="undefined undefined"
+      >
+        Computer
+      </h3>
+    </div>
+    <div>
+      <div
+        class="glass undefined undefined"
+      >
+        <img
+          src="test-file-stub"
+        />
+      </div>
+    </div>
+    <h1>
+      3
+    </h1>
+  </div>
+</DocumentFragment>
+`;

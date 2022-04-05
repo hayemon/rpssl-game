@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button renders 1`] = `
+<DocumentFragment>
+  <button
+    class="glass undefined"
+    role="button"
+  >
+    <img
+      src="test-file-stub"
+    />
+  </button>
+</DocumentFragment>
+`;

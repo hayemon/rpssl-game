@@ -1,0 +1,10 @@
+.box {
+  position: absolute;
+  bottom: 5vh;
+  left: 0;
+  width: 100vw;
+  transition: 0.5s;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

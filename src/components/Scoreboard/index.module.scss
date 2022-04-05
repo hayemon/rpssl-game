@@ -1,0 +1,59 @@
+@import '../../variables.scss';
+
+.box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 15vw;
+  height: 95vh;
+  border-radius: $border-radius;
+  margin: $margin;
+  padding: $padding;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title h3 {
+  margin: 0;
+  padding: 0;
+  letter-spacing: 3px;
+  font-weight: lighter;
+}
+
+.title svg {
+  font-size: 1.5rem;
+  overflow: visible;
+}
+
+.title svg:hover {
+  filter: drop-shadow(0px 0px 1px white);
+}
+
+.title svg:active {
+  transform: scale(1.05);
+}
+
+.box hr {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.box ul {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.box ul li {
+  display: flex;
+  margin: $margin 0;
+  transition: 0.5s;
+}
+
+.box ul li:hover {
+  transform: translateX(10px) scale(1.1);
+}

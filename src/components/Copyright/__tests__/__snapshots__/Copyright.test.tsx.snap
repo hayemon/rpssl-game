@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Copyright renders 1`] = `
+<DocumentFragment>
+  <span
+    class="copyright"
+  >
+    <a
+      href="http://www.freepik.com"
+    >
+      Designed by pikisuperstar / Freepik
+    </a>
+  </span>
+</DocumentFragment>
+`;

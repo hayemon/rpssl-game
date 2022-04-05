@@ -1,0 +1,171 @@
+@import '../../mixins';
+@include rotate-animation;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+  margin: 0 20vw 0 20vw;
+}
+
+.container h1 {
+  position: absolute;
+  font-size: 25rem;
+  color: rgba(255, 255, 255, 0.1);
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+@mixin box {
+  width: 500px;
+  height: 200px;
+  border-radius: $border-radius;
+  display: flex;
+  transform-origin: center;
+  perspective-origin: center;
+  overflow: hidden;
+}
+
+.box {
+  @include box;
+  animation: rotate 5s infinite linear, fade-in 1s;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes wobble {
+  0% {
+    transform: perspective(600px) rotateX(14deg);
+  }
+  25% {
+    transform: perspective(600px) rotateY(14deg);
+  }
+  50% {
+    transform: perspective(600px) rotateX(-14deg);
+  }
+  75% {
+    transform: perspective(600px) rotateY(-14deg);
+  }
+  100% {
+    transform: perspective(600px) rotateX(14deg);
+  }
+}
+
+.spinner {
+  @include box;
+  width: 150px;
+  height: 150px;
+  animation: wobble 5s infinite linear;
+}
+
+@mixin burst-in($animation-name, $initial-position) {
+  @keyframes #{$animation-name} {
+    0% {
+      transform: translateY($initial-position);
+      opacity: 1;
+    }
+    20% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+    25% {
+      opacity: 0.5;
+    }
+    30% {
+      opacity: 0;
+    }
+    35% {
+      opacity: 0.8;
+    }
+    40% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+@include burst-in(player-animation, 200px);
+@include burst-in(computer-animation, -200px);
+
+.player {
+  // animation: player-animation 1s;
+}
+
+.computer {
+  // animation: computer-animation 1s;
+}
+
+.title {
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 5px;
+  display: flex;
+  width: 100%;
+}
+
+.playerTitle {
+  justify-content: end;
+  padding-right: 1rem;
+}
+
+.playerTitle::after {
+  content: '';
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  position: absolute;
+  left: 0;
+  height: 230px;
+  width: 50vw;
+}
+
+.computerTitle {
+  justify-content: start;
+  padding-left: 1rem;
+}
+
+.spinner::before {
+  @include spinner-before;
+}
+
+.spinner::after {
+  @include spinner-after;
+}
+
+.spinner img {
+  @include img-in-box;
+}
+
+.box h1 {
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  text-align: center;
+  font-size: 6em;
+  text-transform: uppercase;
+  outline: none;
+  color: white;
+  line-height: 0.75;
+}
+
+.win {
+  @include text-glow($win-color);
+}
+
+.lose {
+  @include text-glow($lose-color);
+}
