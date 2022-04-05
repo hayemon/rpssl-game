@@ -46,10 +46,16 @@ export const gameSlice = createSlice({
       rpsslApi.endpoints.play.matchFulfilled,
       (state, { payload }) => {
         state.results = payload.results
-        state.resultsHistory.push({
+        const currentResult = {
           results: payload.results,
           timeStamp: new Date().toString(),
-        })
+        }
+        if (state.resultsHistory.length > 10) {
+          const [first, ...rest] = state.resultsHistory
+          state.resultsHistory = [...rest, currentResult]
+        } else {
+          state.resultsHistory.push(currentResult)
+        }
       }
     )
   },
