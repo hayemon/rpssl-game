@@ -7,11 +7,3 @@ dev:
 build:
 	docker build -f Dockerfile.production -t rtssl-game-prod .
 	docker run -p 3001:80 --rm --name rtssl-game-prod rtssl-game-prod
-
-# .PHONY: start-built-app
-# build:
-# 	docker run -p 3001:80 --rm --name rtssl-game-prod rtssl-game-prod
-
-# .PHONY: stop-built-app
-# build:
-# 	docker stop rtssl-game-prod
